@@ -1,18 +1,22 @@
 import { Request, Response, Router } from 'express';
+import * as FormControler from '../controllers/formControllers'; 
+import * as HomeControllers from '../controllers/homeControllers';
+import * as FormActionControllers from '../controllers/formActionControllers';
 
 const router = Router();
 
-router.get('/', (req: Request, res: Response) => {
-  res.render('home');
-});
+//------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+router.get ('/home', HomeControllers.home );
 
 
-router.get('/sobre', (req: Request, res: Response) => {
-  res.send('Pagina Institucional ');
-});
+//------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-router.get('/contatos', (req: Request, res: Response) => {
-  res.send('instagram e facebook ');
-});
+router.get('/formulario',FormControler.form );
+
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+router.post('/formulario', FormActionControllers.formAction);
 
 export default router;

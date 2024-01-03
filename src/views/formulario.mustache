@@ -1,0 +1,21 @@
+<html>
+<head>
+<title>Formulário</title>
+</head>
+<body>
+<h1>Formulário teste</h1>
+<hr/>
+<h2>Preencha seu nome</h2>
+<form method='POST' >
+ <input type='text' name='nome' placeholder='Digite seu nome'> <br/>
+ <input type='submit' value='Enviar'/>
+ </form>
+ 
+
+ {{#name}}
+ <hr/>
+  Olá {{name}}, tudo bem ?
+ {{/name}}
+</body>
+
+</html>
